@@ -1,0 +1,71 @@
+.footer {
+  position: relative;
+  padding-block: 40px;
+  background: var(--bg-primary);
+}
+
+.topBorder {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-mid), transparent);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 24px;
+  height: auto;
+  color: var(--accent-cyan);
+  opacity: 0.5;
+}
+
+.studioName {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--text-primary);
+}
+
+.tagline {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.cheeky {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.copy {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 640px) {
+  .inner { flex-direction: column; align-items: flex-start; }
+  .right { align-items: flex-start; }
+}
