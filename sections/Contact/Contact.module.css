@@ -1,0 +1,161 @@
+.contact {
+  position: relative;
+  overflow: hidden;
+}
+
+.ambientGlow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(0, 229, 255, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Inner layout ───────────────────────────────────── */
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ── Left ───────────────────────────────────────────── */
+.left { display: flex; flex-direction: column; gap: 28px; }
+
+.label { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--accent-cyan); text-transform: uppercase; }
+
+.heading {
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  color: var(--text-primary);
+}
+
+.headingAccent { color: var(--accent-cyan); }
+
+.taglineWrap { min-height: 28px; }
+
+.tagline {
+  font-family: var(--font-mono) !important;
+  font-size: clamp(0.85rem, 1.5vw, 1rem) !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ── Email row ──────────────────────────────────────── */
+.emailRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.emailLink {
+  font-family: var(--font-mono);
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--accent-cyan);
+  padding-bottom: 3px;
+  transition: color 0.2s;
+}
+
+.emailLink:hover { color: var(--accent-cyan); }
+
+.copyBtn {
+  background: none;
+  border: 1px solid var(--border-mid);
+  color: var(--text-muted);
+  padding: 5px 12px;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-mono);
+}
+
+.copyBtn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+/* ── Right card ─────────────────────────────────────── */
+.availCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.availCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--accent-lime);
+  opacity: 0.5;
+}
+
+.availHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.availDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-lime);
+  animation: pulse-lime 2s ease-in-out infinite;
+}
+
+@keyframes pulse-lime {
+  0%, 100% { box-shadow: 0 0 4px var(--accent-lime); }
+  50% { box-shadow: 0 0 12px var(--accent-lime), 0 0 24px rgba(184,255,0,0.2); }
+}
+
+.availLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  color: var(--accent-lime);
+  text-transform: uppercase;
+}
+
+.availText {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.availHighlight { color: var(--accent-lime); }
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.contactLink:hover { color: var(--accent-cyan); }
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; gap: 48px; }
+}
