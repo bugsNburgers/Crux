@@ -19,7 +19,8 @@ export default function Contact() {
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
-    const formData = new FormData(event.currentTarget)
+    const form = event.currentTarget
+    const formData = new FormData(form)
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || 'YOUR_ACCESS_KEY_HERE'
     formData.append('access_key', accessKey)
 
@@ -33,7 +34,7 @@ export default function Contact() {
 
       if (data.success) {
         setSubmitStatus('success')
-        event.currentTarget.reset()
+        form.reset()
       } else {
         console.error('Web3Forms Error:', data)
         setSubmitStatus('error')
