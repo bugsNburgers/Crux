@@ -1,0 +1,15 @@
+.container {
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+.text {
+  font-size: clamp(1.4rem, 3.5vw, 2.6rem);
+  line-height: 1.6;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+}
+
+.word {
+  display: inline-block;
+}
