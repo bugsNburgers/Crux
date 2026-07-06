@@ -137,6 +137,7 @@ body::after {
 .section {
   padding-block: var(--section-pad);
   position: relative;
+  scroll-margin-top: 80px;
 }
 
 /* ─── Glow Keyframes ─────────────────────────────────────────────────────── */

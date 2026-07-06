@@ -1,7 +1,7 @@
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal'
 import styles from './Philosophy.module.css'
 
-export default function Philosophy(): JSX.Element {
+export default function Philosophy() {
   return (
     <section className={`${styles.philosophy} section`} id="philosophy">
       <div className={`${styles.inner} container`}>

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import TextType from '@/components/TextType/TextType'
 import styles from './Contact.module.css'
 
-export default function Contact(): JSX.Element {
+export default function Contact() {
   const [copied, setCopied] = useState(false)
   const EMAIL = 'contact@cruxstudios.dev'
 

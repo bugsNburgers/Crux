@@ -3,7 +3,7 @@ import DecryptedText from '@/components/DecryptedText/DecryptedText'
 import TextType from '@/components/TextType/TextType'
 import styles from './Hero.module.css'
 
-export default function Hero(): JSX.Element {
+export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [mounted, setMounted] = useState(false)
 
@@ -75,14 +75,6 @@ export default function Hero(): JSX.Element {
       <div className={styles.glow} aria-hidden="true" />
       <div className={styles.scanLine} aria-hidden="true" />
 
-      {/* Corner labels */}
-      <div className={styles.topLabel}>
-        <span className={styles.dot} />
-        <span className={`${styles.labelText} mono`}>EST. 2024</span>
-      </div>
-      <div className={styles.topRight}>
-        <span className={`${styles.labelText} mono`}>v1.0.0</span>
-      </div>
 
       {/* Main content */}
       <div className={styles.content}>
@@ -100,9 +92,9 @@ export default function Hero(): JSX.Element {
               <span className={styles.titleLine}>
                 <DecryptedText
                   text="CRUX"
-                  speed={35}
-                  maxIterations={18}
-                  sequential={false}
+                  speed={120}
+                  maxIterations={24}
+                  sequential={true}
                   characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*"
                   animateOn="view"
                   className={styles.revealedChar}
@@ -112,9 +104,9 @@ export default function Hero(): JSX.Element {
               <span className={styles.titleLine2}>
                 <DecryptedText
                   text="STUDIOS"
-                  speed={40}
-                  maxIterations={14}
-                  sequential={false}
+                  speed={120}
+                  maxIterations={24}
+                  sequential={true}
                   characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*"
                   animateOn="view"
                   className={styles.revealedChar2}

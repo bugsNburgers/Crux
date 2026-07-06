@@ -23,7 +23,7 @@ const TECH: Tech[] = [
   { name: 'Express', category: 'backend' },
 ]
 
-export default function TechStack(): JSX.Element {
+export default function TechStack() {
   const gridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function TechStack(): JSX.Element {
     if (!items) return
 
     const handleMove = (e: MouseEvent) => {
-      items.forEach(item => {
+      items.forEach((item: HTMLDivElement) => {
         const rect = item.getBoundingClientRect()
         const cx = rect.left + rect.width / 2
         const cy = rect.top + rect.height / 2

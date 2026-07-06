@@ -53,37 +53,6 @@
   100% { top: 100%; opacity: 0.3; }
 }
 
-/* ── Corner labels ──────────────────────────────────── */
-.topLabel {
-  position: absolute;
-  top: 28px;
-  left: 32px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 10;
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-cyan);
-  animation: pulse-glow 2s ease-in-out infinite;
-  flex-shrink: 0;
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; box-shadow: 0 0 4px var(--accent-cyan); }
-  50% { opacity: 1; box-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--glow-cyan); }
-}
-
-.topRight {
-  position: absolute;
-  top: 28px;
-  right: 32px;
-  z-index: 10;
-}
 
 .labelText {
   font-size: 0.7rem;
@@ -266,9 +235,25 @@
 
 /* ── Responsive ─────────────────────────────────────── */
 @media (max-width: 640px) {
-  .topLabel { left: 20px; top: 20px; }
-  .topRight { right: 20px; top: 20px; }
   .bottomBar { gap: 8px; }
   .ctaRow { flex-direction: column; gap: 12px; }
   .scrollIndicator { display: none; }
+}
+
+@media (max-height: 750px) {
+  .logoMark {
+    margin-bottom: 12px;
+  }
+  .title {
+    margin-bottom: 16px;
+  }
+  .titleLine {
+    font-size: clamp(3.5rem, 22vh, 10rem);
+  }
+  .titleLine2 {
+    font-size: clamp(1.4rem, 7vh, 3.2rem);
+  }
+  .tagline {
+    margin-bottom: 24px;
+  }
 }

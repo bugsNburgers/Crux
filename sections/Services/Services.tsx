@@ -61,7 +61,7 @@ const SERVICES: Service[] = [
   },
 ]
 
-export default function Services(): JSX.Element {
+export default function Services() {
   return (
     <section className={`${styles.services} section`} id="services">
       <div className="container">

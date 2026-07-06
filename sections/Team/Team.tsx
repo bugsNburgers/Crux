@@ -22,7 +22,7 @@ const TEAM: TeamMember[] = [
   },
 ]
 
-export default function Team(): JSX.Element {
+export default function Team() {
   return (
     <section className={`${styles.team} section`} id="team">
       <div className="container">

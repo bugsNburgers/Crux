@@ -14,7 +14,7 @@ const STEPS: Step[] = [
   { num: '04', icon: '◈', title: 'Support', desc: '1:1 support post-launch. You have our number. We monitor uptime, fix bugs fast, and stay on the product long after delivery.' },
 ]
 
-export default function Process(): JSX.Element {
+export default function Process() {
   return (
     <section className={`${styles.process} section`} id="process">
       <div className="container">
