@@ -1,0 +1,84 @@
+.philosophy {
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 2px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── Accent line ────────────────────────────────────── */
+.accentLine {
+  position: relative;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent-cyan), transparent);
+  opacity: 0.4;
+  align-self: stretch;
+  min-height: 300px;
+}
+
+.accentDot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 12px var(--accent-cyan), 0 0 24px var(--glow-cyan);
+  animation: pulseDot 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 12px var(--accent-cyan); }
+  50% { transform: translateX(-50%) scale(1.4); box-shadow: 0 0 20px var(--accent-cyan), 0 0 40px var(--glow-cyan); }
+}
+
+/* ── Content ────────────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-block: 20px;
+}
+
+.label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+}
+
+.manifestoContainer {
+  /* Override ScrollReveal defaults */
+  margin: 0 !important;
+}
+
+.manifestoText {
+  font-size: clamp(1.35rem, 3vw, 2.4rem) !important;
+  line-height: 1.65 !important;
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+}
+
+.subLine {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent-lime);
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 2px 1fr;
+    gap: 24px;
+  }
+  .accentLine { min-height: 200px; }
+}

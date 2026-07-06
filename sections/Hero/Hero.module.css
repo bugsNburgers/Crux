@@ -1,0 +1,274 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* ── Canvas BG ──────────────────────────────────────── */
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Center radial glow ─────────────────────────────── */
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 55% at 50% 50%,
+    rgba(0, 229, 255, 0.05) 0%,
+    rgba(0, 229, 255, 0.02) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Scan line decoration ───────────────────────────── */
+.scanLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  opacity: 0.3;
+  animation: scanLine 6s linear infinite;
+  z-index: 2;
+}
+
+@keyframes scanLine {
+  0%   { top: 0; opacity: 0.3; }
+  50%  { opacity: 0.6; }
+  100% { top: 100%; opacity: 0.3; }
+}
+
+/* ── Corner labels ──────────────────────────────────── */
+.topLabel {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  animation: pulse-glow 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; box-shadow: 0 0 4px var(--accent-cyan); }
+  50% { opacity: 1; box-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--glow-cyan); }
+}
+
+.topRight {
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  z-index: 10;
+}
+
+.labelText {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* ── Main content ───────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+}
+
+/* ── Logo mark ──────────────────────────────────────── */
+.logoMark {
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.logoSvg {
+  width: 36px;
+  height: auto;
+  color: var(--accent-cyan);
+}
+
+/* ── Title ──────────────────────────────────────────── */
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  line-height: 0.88;
+  margin-bottom: 32px;
+}
+
+.titleLine {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: clamp(5rem, 16vw, 18rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  line-height: 0.9;
+}
+
+.titleLine2 {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: clamp(1.8rem, 5.5vw, 6.4rem);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  color: var(--text-secondary);
+  line-height: 1.2;
+  margin-top: 4px;
+}
+
+/* Revealed chars */
+.revealedChar {
+  color: var(--text-primary);
+}
+
+.revealedChar2 {
+  color: var(--text-secondary);
+}
+
+/* Encrypted scramble chars */
+.encryptedChar {
+  color: var(--accent-cyan);
+  opacity: 0.7;
+}
+
+/* ── Tagline TextType ───────────────────────────────── */
+.tagline {
+  margin-bottom: 40px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.taglineText {
+  font-family: var(--font-mono);
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+/* ── CTA Row ────────────────────────────────────────── */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ctaPrimary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+  padding: 12px 24px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.2s var(--ease-out-expo);
+  border: 1px solid var(--accent-cyan);
+}
+
+.ctaPrimary:hover {
+  background: transparent;
+  color: var(--accent-cyan);
+  box-shadow: 0 0 20px var(--glow-cyan-md);
+}
+
+.ctaSecondary {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--text-muted);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.ctaSecondary:hover {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+/* ── Bottom bar ─────────────────────────────────────── */
+.bottomBar {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.sep {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
+/* ── Scroll indicator ───────────────────────────────── */
+.scrollIndicator {
+  position: absolute;
+  right: 32px;
+  bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--accent-cyan), transparent);
+  animation: scrollDrop 2s ease-in-out infinite;
+}
+
+@keyframes scrollDrop {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .topLabel { left: 20px; top: 20px; }
+  .topRight { right: 20px; top: 20px; }
+  .bottomBar { gap: 8px; }
+  .ctaRow { flex-direction: column; gap: 12px; }
+  .scrollIndicator { display: none; }
+}
