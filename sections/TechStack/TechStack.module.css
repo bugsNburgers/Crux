@@ -1,0 +1,69 @@
+.techStack { position: relative; }
+
+.header { margin-bottom: 48px; display: flex; flex-direction: column; gap: 10px; }
+
+.label { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--accent-cyan); text-transform: uppercase; }
+
+.heading {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+
+.sub { font-size: 0.82rem; color: var(--text-muted); }
+
+/* ── Grid ───────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 2px;
+}
+
+/* ── Tech item ──────────────────────────────────────── */
+.techItem {
+  position: relative;
+  padding: 20px 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: default;
+}
+
+.techItem:hover {
+  background: var(--bg-elevated);
+}
+
+.techName {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: inherit;
+  letter-spacing: 0.02em;
+  transition: color 0.15s;
+}
+
+.techCat {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Subtle top accent line on proximity */
+.techItem::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--accent-cyan);
+  opacity: calc(var(--proximity, 0) * 0.8);
+  transition: opacity 0.15s;
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .sub { display: none; }
+}
