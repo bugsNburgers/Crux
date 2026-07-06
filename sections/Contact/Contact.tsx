@@ -4,12 +4,46 @@ import styles from './Contact.module.css'
 
 export default function Contact() {
   const [copied, setCopied] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const EMAIL = 'contact@cruxstudios.dev'
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText(EMAIL)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
+  }
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    const formData = new FormData(event.currentTarget)
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || 'YOUR_ACCESS_KEY_HERE'
+    formData.append('access_key', accessKey)
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitStatus('success')
+        event.currentTarget.reset()
+      } else {
+        console.error('Web3Forms Error:', data)
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Submission Error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -68,30 +102,60 @@ export default function Contact() {
                 Typical response time: <strong className={styles.availHighlight}>within 24h.</strong>
               </p>
 
-              <div className={styles.contactLinks}>
-                <a
-                  href="https://www.linkedin.com/in/suprateek-yawagal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${styles.contactLink} mono`}
+              <form className={styles.form} onSubmit={handleSubmit}>
+                <div className={styles.formGroup}>
+                  <label htmlFor="name" className={`${styles.formLabel} mono`}>NAME</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className={styles.formInput}
+                    placeholder="Your name"
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="email" className={`${styles.formLabel} mono`}>EMAIL</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className={styles.formInput}
+                    placeholder="you@example.com"
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="message" className={`${styles.formLabel} mono`}>PROJECT DETAILS</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    className={styles.formTextarea}
+                    placeholder="Briefly describe what you're building..."
+                    rows={3}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`${styles.submitBtn} mono`}
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  Suprateek
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/ull0s-m/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${styles.contactLink} mono`}
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  Ullas
-                </a>
-              </div>
+                  {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
+                </button>
+
+                {submitStatus === 'success' && (
+                  <p className={`${styles.statusText} ${styles.successText} mono`}>
+                    ✓ SENT! WE&apos;LL BE IN TOUCH SOON.
+                  </p>
+                )}
+                {submitStatus === 'error' && (
+                  <p className={`${styles.statusText} ${styles.errorText} mono`}>
+                    ✗ ERROR. PLEASE TRY COPYING THE EMAIL DIRECTLY.
+                  </p>
+                )}
+              </form>
             </div>
           </div>
         </div>

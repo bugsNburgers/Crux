@@ -59,6 +59,7 @@
   letter-spacing: 0.12em;
   color: var(--text-muted);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 /* ── Main content ───────────────────────────────────── */
@@ -235,7 +236,14 @@
 
 /* ── Responsive ─────────────────────────────────────── */
 @media (max-width: 640px) {
-  .bottomBar { gap: 8px; }
+  .bottomBar {
+    flex-direction: column;
+    gap: 6px;
+    bottom: 20px;
+  }
+  .sep {
+    display: none;
+  }
   .ctaRow { flex-direction: column; gap: 12px; }
   .scrollIndicator { display: none; }
 }

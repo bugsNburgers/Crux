@@ -135,25 +135,88 @@
 
 .availHighlight { color: var(--accent-lime); }
 
-.contactLinks {
+.form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 8px;
+  gap: 16px;
   border-top: 1px solid var(--border-subtle);
+  padding-top: 20px;
 }
 
-.contactLink {
+.formGroup {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  transition: color 0.2s;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.contactLink:hover { color: var(--accent-cyan); }
+.formLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.formInput,
+.formTextarea {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-mid);
+  color: var(--text-primary);
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+}
+
+.formTextarea {
+  resize: vertical;
+}
+
+.submitBtn {
+  background: var(--accent-cyan);
+  border: 1px solid var(--accent-cyan);
+  color: var(--bg-primary);
+  padding: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out-expo);
+  margin-top: 8px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: transparent;
+  color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.statusText {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.successText {
+  color: var(--accent-lime);
+}
+
+.errorText {
+  color: #ff5555;
+}
 
 /* ── Responsive ─────────────────────────────────────── */
 @media (max-width: 900px) {
