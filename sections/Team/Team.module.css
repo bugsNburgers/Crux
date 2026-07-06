@@ -1,0 +1,163 @@
+.team { position: relative; }
+
+/* ── Header ─────────────────────────────────────────── */
+.header {
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+}
+
+.heading {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+/* ── Grid ───────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 48px;
+}
+
+/* ── Card ───────────────────────────────────────────── */
+.card {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(0, 229, 255, 0.2);
+  background: var(--bg-elevated);
+}
+
+.card:hover .cardGlow { opacity: 1; }
+.card:hover .avatarRing { opacity: 1; transform: scale(1.12); }
+
+/* ── Avatar ─────────────────────────────────────────── */
+.avatar {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.initials {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-mid);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  letter-spacing: 0.06em;
+}
+
+.avatarRing {
+  position: absolute;
+  inset: -3px;
+  border: 1px solid var(--accent-cyan);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* ── Info ───────────────────────────────────────────── */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.role {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.focus {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── LinkedIn ────────────────────────────────────────── */
+.linkedinLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  margin-top: auto;
+  transition: color 0.2s;
+  width: fit-content;
+}
+
+.linkedinLink:hover {
+  color: var(--accent-cyan);
+}
+
+.linkedinText {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Card glow ───────────────────────────────────────── */
+.cardGlow {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--glow-cyan) 0%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+/* ── Statement ───────────────────────────────────────── */
+.statement {
+  border-left: 2px solid var(--accent-cyan);
+  padding-left: 24px;
+}
+
+.statText {
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 28px; }
+  .desktopBr { display: none; }
+}
