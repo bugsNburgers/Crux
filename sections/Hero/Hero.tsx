@@ -79,11 +79,7 @@ export default function Hero() {
       {/* Main content */}
       <div className={styles.content}>
         <div className={styles.logoMark} aria-hidden="true">
-          <svg viewBox="0 0 100 120" fill="none" className={styles.logoSvg}>
-            <line x1="8" y1="8" x2="92" y2="92" stroke="currentColor" strokeWidth="9" strokeLinecap="square"/>
-            <line x1="92" y1="8" x2="8" y2="92" stroke="currentColor" strokeWidth="9" strokeLinecap="square"/>
-            <line x1="65" y1="65" x2="100" y2="118" stroke="currentColor" strokeWidth="9" strokeLinecap="square"/>
-          </svg>
+          <img src="/favicon.svg" className={styles.logoSvg} alt="" aria-hidden="true" />
         </div>
 
         <h1 className={styles.title}>

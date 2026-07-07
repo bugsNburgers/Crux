@@ -16,8 +16,12 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Crux Studios | Zero-bloat engineering</title>
-        <meta name="description" content="Crux Studios - we understand the problem first, then we build the solution. Full-stack dev studio." />
+        <title>Crux Studios | Full-Stack Software Development Studio — Bangalore, India</title>
+        <meta
+          name="description"
+          content="Crux Studios is a full-stack software development studio. We architect distributed systems, build high-performance web apps, and ship zero-bloat software. Based in Bangalore, available worldwide."
+        />
+        <link rel="canonical" href="https://cruxstudios.dev" />
       </Head>
 
       <Nav />
