@@ -32,7 +32,7 @@
 /* ── Step ───────────────────────────────────────────── */
 .step {
   position: relative;
-  padding: 32px 24px 32px 0;
+  padding: 32px 24px;
   border-top: 1px solid var(--border-subtle);
   border-right: 1px solid var(--border-subtle);
   transition: background 0.25s;

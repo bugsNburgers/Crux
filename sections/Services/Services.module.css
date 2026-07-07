@@ -67,8 +67,14 @@
 }
 
 /* Card sizes */
-.wide { grid-column: span 2; }
-.tall { grid-row: span 2; }
+.wide {
+  grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
 .normal {}
 
 /* ── Card base ──────────────────────────────────────── */
@@ -88,14 +94,18 @@
 .card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 1px;
   background: var(--accent-cyan);
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.card:hover::before { opacity: 0.4; }
+.card:hover::before {
+  opacity: 0.4;
+}
 
 .cardInner {
   position: relative;
@@ -128,9 +138,11 @@
   transition: color 0.2s;
 }
 
-.card:hover .cardIcon { color: var(--accent-cyan); }
+.card:hover .cardIcon {
+  color: var(--accent-cyan);
+}
 
-/* Title from BlurText — it renders a <p>, override */
+/* Title from BlurText - it renders a <p>, override */
 .cardTitle {
   font-size: 1rem !important;
   font-weight: 600 !important;
@@ -149,15 +161,33 @@
 }
 
 /* ── Accent variants ────────────────────────────────── */
-.accent_cyan .cardIcon { color: var(--accent-cyan); }
+.accent_cyan .cardIcon {
+  color: var(--accent-cyan);
+}
 
-.accent_lime .card:hover .cardIcon { color: var(--accent-lime); }
-.accent_lime .card::before { background: var(--accent-lime); }
-.accent_lime .cardIcon { color: var(--accent-lime); }
+.accent_lime .card:hover .cardIcon {
+  color: var(--accent-lime);
+}
 
-.accent_magenta .card:hover .cardIcon { color: var(--accent-magenta); }
-.accent_magenta .card::before { background: var(--accent-magenta); }
-.accent_magenta .cardIcon { color: var(--accent-magenta); }
+.accent_lime .card::before {
+  background: var(--accent-lime);
+}
+
+.accent_lime .cardIcon {
+  color: var(--accent-lime);
+}
+
+.accent_magenta .card:hover .cardIcon {
+  color: var(--accent-magenta);
+}
+
+.accent_magenta .card::before {
+  background: var(--accent-magenta);
+}
+
+.accent_magenta .cardIcon {
+  color: var(--accent-magenta);
+}
 
 /* ── Badge ──────────────────────────────────────────── */
 .badge {
@@ -180,8 +210,15 @@
 }
 
 @keyframes pulse-glow-lime {
-  0%, 100% { box-shadow: 0 0 4px var(--accent-lime); }
-  50% { box-shadow: 0 0 12px var(--accent-lime); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 4px var(--accent-lime);
+  }
+
+  50% {
+    box-shadow: 0 0 12px var(--accent-lime);
+  }
 }
 
 .badgeText {
@@ -197,8 +234,14 @@
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 200px;
   }
-  .wide { grid-column: span 2; }
-  .tall { grid-row: span 1; }
+
+  .wide {
+    grid-column: span 2;
+  }
+
+  .tall {
+    grid-row: span 1;
+  }
 }
 
 @media (max-width: 600px) {
@@ -206,7 +249,18 @@
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
   }
-  .wide { grid-column: span 1; }
-  .statsRow { flex-direction: column; }
-  .statDivider { width: 100%; height: 1px; align-self: auto; }
+
+  .wide {
+    grid-column: span 1;
+  }
+
+  .statsRow {
+    flex-direction: column;
+  }
+
+  .statDivider {
+    width: 100%;
+    height: 1px;
+    align-self: auto;
+  }
 }

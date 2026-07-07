@@ -16,7 +16,7 @@ const PROJECTS: Project[] = [
   {
     id: 'honorlog', name: 'HonorLog', url: 'https://honorlog.shorinkai.in', num: '01', status: 'LIVE',
     tagline: 'Achievement tracking for martial arts academies.',
-    desc: 'A custom-built platform that tracks student milestones, belt gradings, and attendance — replacing messy spreadsheets for a dojo with 200+ active students.',
+    desc: 'A custom-built platform that tracks student milestones, belt gradings, and attendance - replacing messy spreadsheets for a dojo with 200+ active students.',
     tags: ['Next.js', 'Node.js', 'PostgreSQL', 'Auth'],
   },
   {
@@ -28,8 +28,14 @@ const PROJECTS: Project[] = [
   {
     id: 'ringflow', name: 'RingFlow', url: 'https://ringflow-two.vercel.app', num: '03', status: 'LIVE',
     tagline: 'Communication workflow, simplified.',
-    desc: 'A streamlined app for managing call flows and team communication pipelines — designed for small ops teams who need clarity over complexity.',
+    desc: 'A streamlined app for managing call flows and team communication pipelines - designed for small ops teams who need clarity over complexity.',
     tags: ['React', 'WebSockets', 'REST API'],
+  },
+  {
+    id: 'drawer', name: 'Drawer', url: 'https://github.com/ull0sm/Drawer', num: '04', status: 'OPEN SOURCE',
+    tagline: 'Comprehensive tournament draw system for karate events.',
+    desc: 'Automates single-elimination tournament brackets. Features intelligent player filtering (gender, belt, age), weight and school-balanced group creation, and professional PDF bracket generation.',
+    tags: ['Python', 'pandas', 'ReportLab', 'Docker'],
   },
 ]
 
@@ -47,7 +53,7 @@ export default function Projects() {
             stepDuration={0.4}
             className={styles.heading}
           />
-          <p className={styles.subHeading}>Three products live. Two more in the build queue.</p>
+          <p className={styles.subHeading}>Four products live. One more in the build queue.</p>
         </div>
 
         <div className={styles.list}>
@@ -75,7 +81,7 @@ export default function Projects() {
               </div>
               <div className={styles.arrow}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M4 10h12M12 5l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square"/>
+                  <path d="M4 10h12M12 5l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
                 </svg>
               </div>
             </a>
@@ -89,8 +95,8 @@ export default function Projects() {
           </div>
           <div className={styles.csLock}>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <rect x="3" y="8" width="12" height="9" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-              <path d="M6 8V5a3 3 0 116 0v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square"/>
+              <rect x="3" y="8" width="12" height="9" rx="1" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M6 8V5a3 3 0 116 0v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
             </svg>
           </div>
         </div>

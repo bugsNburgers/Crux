@@ -16,12 +16,12 @@ interface Service {
 const SERVICES: Service[] = [
   {
     id: 'uiux', icon: '◈', title: 'UI / UX Design',
-    desc: "We design before we code. Wireframes, flows, and high-fidelity screens that solve real user problems — not design-for-design's-sake.",
+    desc: "We design before we code. Wireframes, flows, and high-fidelity screens that solve real user problems - not design-for-design's-sake.",
     size: 'wide', accent: 'cyan',
   },
   {
     id: 'frontend', icon: '{ }', title: 'Frontend',
-    desc: "React, Next.js, TypeScript — fast, accessible, and pixel-perfect. We don't use templates.",
+    desc: "React, Next.js, TypeScript - fast, accessible, and pixel-perfect. We don't use templates.",
     size: 'normal', accent: 'default',
   },
   {
@@ -31,7 +31,7 @@ const SERVICES: Service[] = [
   },
   {
     id: 'versioncontrol', icon: '⎇', title: 'Version Control',
-    desc: 'Git from day one. If anything breaks, we revert in minutes — not hours.',
+    desc: 'Git from day one. If anything breaks, we revert in minutes - not hours.',
     size: 'normal', accent: 'default',
   },
   {
@@ -81,16 +81,16 @@ export default function Services() {
         <div className={styles.statsRow}>
           <div className={styles.stat}>
             <span className={`${styles.statNum} mono`}>
-              <CountUp from={0} to={3} duration={1.5} className={styles.statNum} />+
+              <CountUp from={0} to={7} duration={1.5} className={styles.statNum} />+
             </span>
-            <span className={styles.statLabel}>shipped projects</span>
+            <span className={styles.statLabel}>deployed projects</span>
           </div>
           <div className={styles.statDivider} />
           <div className={styles.stat}>
             <span className={`${styles.statNum} mono`}>
-              <CountUp from={0} to={2} duration={1.2} className={styles.statNum} />
+              <CountUp from={0} to={50} duration={1.2} className={styles.statNum} />+
             </span>
-            <span className={styles.statLabel}>devs, zero overhead</span>
+            <span className={styles.statLabel}>repos built & run</span>
           </div>
           <div className={styles.statDivider} />
           <div className={styles.stat}>

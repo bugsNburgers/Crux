@@ -8,8 +8,8 @@ interface Step {
 }
 
 const STEPS: Step[] = [
-  { num: '01', icon: '◎', title: 'Understand', desc: 'We sit down, listen, and map the real problem — not the surface-level request. Half the work happens before a line of code is written.' },
-  { num: '02', icon: '◫', title: 'Architect', desc: 'Right-sized solution. No over-engineering. If you need a simple app, you get a simple app — built correctly, not impressively.' },
+  { num: '01', icon: '◎', title: 'Understand', desc: 'We sit down, listen, and map the real problem - not the surface-level request. Half the work happens before a line of code is written.' },
+  { num: '02', icon: '◫', title: 'Architect', desc: 'Right-sized solution. No over-engineering. If you need a simple app, you get a simple app - built correctly, not impressively.' },
   { num: '03', icon: '▣', title: 'Build', desc: 'TypeScript, clean code, version controlled from commit one. Every feature tested before it ships. GitHub is the source of truth.' },
   { num: '04', icon: '◈', title: 'Support', desc: '1:1 support post-launch. You have our number. We monitor uptime, fix bugs fast, and stay on the product long after delivery.' },
 ]

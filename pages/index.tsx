@@ -15,8 +15,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Crux Studios — Software that fits.</title>
-        <meta name="description" content="Crux Studios — we understand the problem first, then we build the solution. Full-stack dev studio." />
+        <title>Crux Studios | Zero-bloat engineering</title>
+        <meta name="description" content="Crux Studios - we understand the problem first, then we build the solution. Full-stack dev studio." />
       </Head>
 
       <Nav />

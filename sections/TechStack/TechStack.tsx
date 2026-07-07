@@ -19,7 +19,7 @@ const TECH: Tech[] = [
   { name: 'Stripe', category: 'payments' },
   { name: 'Razorpay', category: 'payments' },
   { name: 'Figma', category: 'design' },
-  { name: 'GSAP', category: 'animation' },
+  { name: 'Stitch', category: 'design' },
   { name: 'Express', category: 'backend' },
 ]
 

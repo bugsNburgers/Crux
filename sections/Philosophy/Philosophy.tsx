@@ -18,7 +18,7 @@ export default function Philosophy() {
             containerClassName={styles.manifestoContainer}
             textClassName={styles.manifestoText}
           >
-            {`You don't need microservices for 100 visitors a day. You don't need a Kubernetes cluster for a contact form. We identify the real problem, architect the right solution, and ship software that actually works — without the bloat, without the BS.`}
+            {`You don't need microservices for 100 visitors a day. You don't need a Kubernetes cluster for a contact form. We identify the real problem, architect the right solution, and ship software that actually works - without the bloat, without the BS.`}
           </ScrollReveal>
           <p className={styles.subLine}>Right tool. Right scale. Right outcome.</p>
         </div>

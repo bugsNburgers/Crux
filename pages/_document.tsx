@@ -14,11 +14,11 @@ export default function Document() {
         <meta name="author" content="Crux Studios" />
         <meta
           name="description"
-          content="Crux Studios — we understand the problem first, then we build the solution. Full-stack development studio building web apps and software that actually works."
+          content="Crux Studios - we understand the problem first, then we build the solution. Full-stack development studio building web apps and software that actually works."
         />
         <meta name="keywords" content="web development, software studio, full stack, React, Next.js, TypeScript, backend, UI/UX" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Crux Studios — Software that fits." />
+        <meta property="og:title" content="Crux Studios - Zero-bloat engineering" />
         <meta property="og:description" content="We understand the problem. We build the solution. Nothing more." />
         <meta property="og:url" content="https://cruxstudios.dev" />
         <meta name="twitter:card" content="summary_large_image" />

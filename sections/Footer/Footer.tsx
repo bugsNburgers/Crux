@@ -13,7 +13,7 @@ export default function Footer(): JSX.Element {
           </svg>
           <div>
             <p className={`${styles.studioName} mono`}>CRUX STUDIOS</p>
-            <p className={`${styles.tagline} mono`}>Software that fits.</p>
+            <p className={`${styles.tagline} mono`}>Zero-bloat engineering.</p>
           </div>
         </div>
 
