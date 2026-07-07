@@ -78,7 +78,8 @@ export default function Contact() {
               />
             </div>
 
-            <div className={styles.emailRow}>
+            <div className={styles.emailContainer}>
+              <span className={`${styles.prompt} mono`}>→</span>
               <a href={`mailto:${EMAIL}`} className={styles.emailLink} aria-label="Send email">
                 {EMAIL}
               </a>
@@ -87,7 +88,7 @@ export default function Contact() {
                 className={`${styles.copyBtn} mono`}
                 aria-label="Copy email address"
               >
-                {copied ? '✓ COPIED' : 'COPY'}
+                {copied ? '[ copied ]' : '[ copy ]'}
               </button>
             </div>
           </div>
@@ -104,28 +105,31 @@ export default function Contact() {
               </p>
 
               <form className={styles.form} onSubmit={handleSubmit}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="name" className={`${styles.formLabel} mono`}>NAME</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className={styles.formInput}
-                    placeholder="Your name"
-                  />
+                <div className={styles.formRow}>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="name" className={`${styles.formLabel} mono`}>NAME</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      className={styles.formInput}
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="email" className={`${styles.formLabel} mono`}>EMAIL</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className={styles.formInput}
+                      placeholder="you@example.com"
+                    />
+                  </div>
                 </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="email" className={`${styles.formLabel} mono`}>EMAIL</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className={styles.formInput}
-                    placeholder="you@example.com"
-                  />
-                </div>
+
                 <div className={styles.formGroup}>
                   <label htmlFor="message" className={`${styles.formLabel} mono`}>PROJECT DETAILS</label>
                   <textarea
@@ -134,7 +138,7 @@ export default function Contact() {
                     required
                     className={styles.formTextarea}
                     placeholder="Briefly describe what you're building..."
-                    rows={3}
+                    rows={2}
                   />
                 </div>
 

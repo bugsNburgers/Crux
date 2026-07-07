@@ -28,9 +28,15 @@ const Home: NextPage = () => {
         <Team />
         <Process />
         <TechStack />
-        <Contact />
       </main>
-      <Footer />
+
+      <div className="contact-footer-wrap">
+        <Contact />
+        <Footer />
+        <div className="bottom-bg-text" aria-hidden="true">
+          CRU<span className="accent-x">X</span>
+        </div>
+      </div>
     </>
   )
 }

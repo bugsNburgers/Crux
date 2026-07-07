@@ -1,7 +1,7 @@
 .footer {
   position: relative;
-  padding-block: 40px;
-  background: var(--bg-primary);
+  padding-block: 80px 40px; /* Taller top padding for the giant text */
+  background: transparent; /* Transparent so watermark shows through */
 }
 
 .topBorder {
@@ -16,6 +16,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  position: relative;
+  z-index: 2; /* Sits on top of the background text */
 }
 
 .left {

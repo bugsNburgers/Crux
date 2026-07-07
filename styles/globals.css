@@ -161,3 +161,32 @@ body::after {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
 }
+
+/* ─── Contact + Footer Wrapper ────────────────────────── */
+.contact-footer-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.bottom-bg-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 12%); /* Center and crop the bottom slightly */
+  font-family: var(--font-sans);
+  font-size: clamp(10rem, 30vw, 35rem); /* Slightly smaller gigantic text */
+  font-weight: 900; /* Ultra-bold / Black weight */
+  letter-spacing: -0.05em;
+  color: var(--text-primary);
+  opacity: 0.02; /* Extremely subtle watermark */
+  line-height: 0.85;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.bottom-bg-text .accent-x {
+  color: var(--accent-cyan);
+}
