@@ -111,6 +111,7 @@
   font-size: clamp(1.8rem, 5.5vw, 6.4rem);
   font-weight: 400;
   letter-spacing: 0.28em;
+  margin-right: -0.28em;
   color: var(--text-secondary);
   line-height: 1.2;
   margin-top: 4px;

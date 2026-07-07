@@ -92,8 +92,8 @@ export default function Hero() {
               <span className={styles.titleLine}>
                 <DecryptedText
                   text="CRUX"
-                  speed={40}
-                  maxIterations={10}
+                  speed={30}
+                  maxIterations={22}
                   sequential={true}
                   characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*"
                   animateOn="view"
@@ -104,8 +104,8 @@ export default function Hero() {
               <span className={styles.titleLine2}>
                 <DecryptedText
                   text="STUDIOS"
-                  speed={40}
-                  maxIterations={10}
+                  speed={30}
+                  maxIterations={22}
                   sequential={true}
                   characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*"
                   animateOn="view"
@@ -121,10 +121,10 @@ export default function Hero() {
           {mounted && (
             <TextType
               text={[
-                'we understand the problem first.',
-                'then we build the solution.',
-                'right-sized. nothing more.',
-                'software that actually works.',
+                'Architecting high-performance distributed systems.',
+                'Compiling complex ideas into clean code.',
+                'Crafting zero-latency full-stack experiences.',
+                'Engineering software that scales to infinity.',
               ]}
               typingSpeed={55}
               deletingSpeed={28}
