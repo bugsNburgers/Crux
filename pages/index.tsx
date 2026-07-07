@@ -10,6 +10,7 @@ import TechStack from '@/sections/TechStack/TechStack'
 import Contact from '@/sections/Contact/Contact'
 import Footer from '@/sections/Footer/Footer'
 import Nav from '@/components/Nav/Nav'
+import FuzzyText from '@/components/FuzzyText/FuzzyText'
 
 const Home: NextPage = () => {
   return (
@@ -33,9 +34,27 @@ const Home: NextPage = () => {
       <div className="contact-footer-wrap">
         <Contact />
         <Footer />
-        <div className="bottom-bg-text" aria-hidden="true">
-          <span className="bg-text-main">CRU</span><span className="accent-x">X</span>
-        </div>
+        <FuzzyText
+          fontSize="clamp(8rem, 26vw, 30rem)"
+          fontWeight={900}
+          fontFamily="Inter, system-ui, -apple-system, sans-serif"
+          baseIntensity={0.15}
+          hoverIntensity={0.4}
+          enableHover={true}
+          fuzzRange={24}
+          fps={60}
+          direction="horizontal"
+          className="bottom-bg-text"
+          gradient={[
+            { offset: 0, color: 'rgba(255, 255, 255, 0.025)' },
+            { offset: 0.74, color: 'rgba(255, 255, 255, 0.025)' },
+            { offset: 0.75, color: 'rgba(0, 229, 255, 0.08)' },
+            { offset: 1.0, color: 'rgba(0, 229, 255, 0.08)' }
+          ]}
+          letterSpacing={-16}
+        >
+          CRUX
+        </FuzzyText>
       </div>
     </>
   )
