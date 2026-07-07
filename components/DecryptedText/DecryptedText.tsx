@@ -145,11 +145,17 @@ export default function DecryptedText({
         if (sequential) {
           if (direction === 'forward') {
             if (prevRevealed.size < text.length) {
-              const nextIndex = getNextIndex(prevRevealed)
-              const newRevealed = new Set(prevRevealed)
-              newRevealed.add(nextIndex)
-              setDisplayText(shuffleText(text, newRevealed))
-              return newRevealed
+              currentIteration++
+              if (currentIteration % maxIterations === 0) {
+                const nextIndex = getNextIndex(prevRevealed)
+                const newRevealed = new Set(prevRevealed)
+                newRevealed.add(nextIndex)
+                setDisplayText(shuffleText(text, newRevealed))
+                return newRevealed
+              } else {
+                setDisplayText(shuffleText(text, prevRevealed))
+                return prevRevealed
+              }
             } else {
               if (intervalRef.current) clearInterval(intervalRef.current)
               setIsAnimating(false); setIsDecrypted(true)
@@ -158,12 +164,18 @@ export default function DecryptedText({
           }
           if (direction === 'reverse') {
             if (pointerRef.current < orderRef.current.length) {
-              const idxToRemove = orderRef.current[pointerRef.current++]
-              const newRevealed = new Set(prevRevealed)
-              newRevealed.delete(idxToRemove)
-              setDisplayText(shuffleText(text, newRevealed))
-              if (newRevealed.size === 0) { if (intervalRef.current) clearInterval(intervalRef.current); setIsAnimating(false); setIsDecrypted(false) }
-              return newRevealed
+              currentIteration++
+              if (currentIteration % maxIterations === 0) {
+                const idxToRemove = orderRef.current[pointerRef.current++]
+                const newRevealed = new Set(prevRevealed)
+                newRevealed.delete(idxToRemove)
+                setDisplayText(shuffleText(text, newRevealed))
+                if (newRevealed.size === 0) { if (intervalRef.current) clearInterval(intervalRef.current); setIsAnimating(false); setIsDecrypted(false) }
+                return newRevealed
+              } else {
+                setDisplayText(shuffleText(text, prevRevealed))
+                return prevRevealed
+              }
             } else {
               if (intervalRef.current) clearInterval(intervalRef.current); setIsAnimating(false); setIsDecrypted(false)
               return prevRevealed

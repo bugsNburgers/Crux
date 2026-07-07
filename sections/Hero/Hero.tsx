@@ -92,8 +92,8 @@ export default function Hero() {
               <span className={styles.titleLine}>
                 <DecryptedText
                   text="CRUX"
-                  speed={120}
-                  maxIterations={24}
+                  speed={40}
+                  maxIterations={10}
                   sequential={true}
                   characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*"
                   animateOn="view"
@@ -104,8 +104,8 @@ export default function Hero() {
               <span className={styles.titleLine2}>
                 <DecryptedText
                   text="STUDIOS"
-                  speed={120}
-                  maxIterations={24}
+                  speed={40}
+                  maxIterations={10}
                   sequential={true}
                   characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*"
                   animateOn="view"
