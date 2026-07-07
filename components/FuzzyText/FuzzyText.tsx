@@ -23,13 +23,13 @@ interface FuzzyTextProps {
   glitchInterval?: number;
   glitchDuration?: number;
   gradient?: string[] | GradientStop[] | null;
-  letterSpacing?: number;
+  letterSpacing?: number | 'inherit';
   className?: string;
 }
 
 const FuzzyText: React.FC<FuzzyTextProps> = ({
   children,
-  fontSize = 'clamp(2rem, 10vw, 10rem)',
+  fontSize = 'inherit',
   fontWeight = 900,
   fontFamily = 'inherit',
   color = '#fff',
@@ -45,7 +45,7 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
   glitchInterval = 2000,
   glitchDuration = 200,
   gradient = null,
-  letterSpacing = 0,
+  letterSpacing = 'inherit',
   className = ''
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -63,11 +63,15 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
       const ctx = canvas.getContext('2d');
       if (!ctx) return;
 
+      const style = window.getComputedStyle(canvas);
+      
       const computedFontFamily =
-        fontFamily === 'inherit' ? window.getComputedStyle(canvas).fontFamily || 'sans-serif' : fontFamily;
+        fontFamily === 'inherit' ? style.fontFamily || 'sans-serif' : fontFamily;
 
-      const fontSizeStr = typeof fontSize === 'number' ? `${fontSize}px` : fontSize;
-      const fontString = `${fontWeight} ${fontSizeStr} ${computedFontFamily}`;
+      const computedFontSize =
+        fontSize === 'inherit' ? style.fontSize || '16px' : (typeof fontSize === 'number' ? `${fontSize}px` : fontSize);
+
+      const fontString = `${fontWeight} ${computedFontSize} ${computedFontFamily}`;
 
       try {
         await document.fonts.load(fontString);
@@ -77,7 +81,9 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
       if (isCancelled) return;
 
       let numericFontSize: number;
-      if (typeof fontSize === 'number') {
+      if (fontSize === 'inherit') {
+        numericFontSize = parseFloat(computedFontSize);
+      } else if (typeof fontSize === 'number') {
         numericFontSize = fontSize;
       } else {
         const temp = document.createElement('span');
@@ -88,21 +94,29 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
         document.body.removeChild(temp);
       }
 
+      let computedLetterSpacing = 0;
+      if (letterSpacing === 'inherit') {
+        const lsVal = style.letterSpacing;
+        computedLetterSpacing = lsVal === 'normal' ? 0 : parseFloat(lsVal);
+      } else {
+        computedLetterSpacing = letterSpacing;
+      }
+
       const text = React.Children.toArray(children).join('');
 
       const offscreen = document.createElement('canvas');
       const offCtx = offscreen.getContext('2d');
       if (!offCtx) return;
 
-      offCtx.font = `${fontWeight} ${fontSizeStr} ${computedFontFamily}`;
+      offCtx.font = `${fontWeight} ${computedFontSize} ${computedFontFamily}`;
       offCtx.textBaseline = 'alphabetic';
 
       let totalWidth = 0;
-      if (letterSpacing !== 0) {
+      if (computedLetterSpacing !== 0) {
         for (const char of text) {
-          totalWidth += offCtx.measureText(char).width + letterSpacing;
+          totalWidth += offCtx.measureText(char).width + computedLetterSpacing;
         }
-        totalWidth -= letterSpacing;
+        totalWidth -= computedLetterSpacing;
       } else {
         totalWidth = offCtx.measureText(text).width;
       }
@@ -136,7 +150,7 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
       offscreen.height = tightHeight;
 
       const xOffset = extraWidthBuffer / 2;
-      offCtx.font = `${fontWeight} ${fontSizeStr} ${computedFontFamily}`;
+      offCtx.font = `${fontWeight} ${computedFontSize} ${computedFontFamily}`;
       offCtx.textBaseline = 'alphabetic';
 
       if (gradient && Array.isArray(gradient) && gradient.length >= 2) {
@@ -153,11 +167,11 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
         offCtx.fillStyle = color;
       }
 
-      if (letterSpacing !== 0) {
+      if (computedLetterSpacing !== 0) {
         let xPos = xOffset;
         for (const char of text) {
           offCtx.fillText(char, xPos, actualAscent);
-          xPos += offCtx.measureText(char).width + letterSpacing;
+          xPos += offCtx.measureText(char).width + computedLetterSpacing;
         }
       } else {
         offCtx.fillText(text, xOffset - actualLeft, actualAscent);

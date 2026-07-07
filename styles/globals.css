@@ -171,7 +171,7 @@ body::after {
 
 .bottom-bg-text {
   position: absolute;
-  bottom: 60px; /* Lifted up from the absolute bottom */
+  bottom: 30px; /* Lifted up slightly from the bottom */
   left: 50%;
   transform: translateX(-50%); /* Centered horizontally */
   font-family: var(--font-sans);
@@ -198,6 +198,6 @@ body::after {
 @media (max-width: 768px) {
   .bottom-bg-text {
     font-size: clamp(4rem, 20vw, 10rem);
-    bottom: 30px;
+    bottom: 10px;
   }
 }

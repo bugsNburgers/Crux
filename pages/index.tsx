@@ -35,13 +35,12 @@ const Home: NextPage = () => {
         <Contact />
         <Footer />
         <FuzzyText
-          fontSize="clamp(8rem, 26vw, 30rem)"
           fontWeight={900}
           fontFamily="Inter, system-ui, -apple-system, sans-serif"
-          baseIntensity={0.15}
+          baseIntensity={0.45}
           hoverIntensity={0.4}
-          enableHover={true}
-          fuzzRange={24}
+          enableHover={false}
+          fuzzRange={50}
           fps={60}
           direction="horizontal"
           className="bottom-bg-text"
@@ -51,7 +50,6 @@ const Home: NextPage = () => {
             { offset: 0.75, color: 'rgba(0, 229, 255, 0.08)' },
             { offset: 1.0, color: 'rgba(0, 229, 255, 0.08)' }
           ]}
-          letterSpacing={-16}
         >
           CRUX
         </FuzzyText>
