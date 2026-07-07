@@ -34,7 +34,7 @@ const Home: NextPage = () => {
         <Contact />
         <Footer />
         <div className="bottom-bg-text" aria-hidden="true">
-          CRU<span className="accent-x">X</span>
+          <span className="bg-text-main">CRU</span><span className="accent-x">X</span>
         </div>
       </div>
     </>

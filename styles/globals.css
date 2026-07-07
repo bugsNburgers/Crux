@@ -171,15 +171,14 @@ body::after {
 
 .bottom-bg-text {
   position: absolute;
-  bottom: 0;
+  bottom: 60px; /* Lifted up from the absolute bottom */
   left: 50%;
-  transform: translate(-50%, 12%); /* Center and crop the bottom slightly */
+  transform: translateX(-50%); /* Centered horizontally */
   font-family: var(--font-sans);
-  font-size: clamp(10rem, 30vw, 35rem); /* Slightly smaller gigantic text */
+  font-size: clamp(8rem, 26vw, 30rem); /* Fits beautifully in the spacious area */
   font-weight: 900; /* Ultra-bold / Black weight */
   letter-spacing: -0.05em;
   color: var(--text-primary);
-  opacity: 0.02; /* Extremely subtle watermark */
   line-height: 0.85;
   pointer-events: none;
   user-select: none;
@@ -187,6 +186,18 @@ body::after {
   white-space: nowrap;
 }
 
+.bottom-bg-text .bg-text-main {
+  opacity: 0.02; /* Muted/subtle watermark opacity */
+}
+
 .bottom-bg-text .accent-x {
   color: var(--accent-cyan);
+  opacity: 0.08; /* Cyan contrast opacity */
+}
+
+@media (max-width: 768px) {
+  .bottom-bg-text {
+    font-size: clamp(4rem, 20vw, 10rem);
+    bottom: 30px;
+  }
 }

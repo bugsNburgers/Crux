@@ -69,7 +69,7 @@
 .subLine {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--accent-lime);
+  color: var(--accent-cyan);
   letter-spacing: 0.08em;
   margin-top: 8px;
 }
