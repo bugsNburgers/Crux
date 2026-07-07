@@ -197,7 +197,7 @@ body::after {
 
 @media (max-width: 768px) {
   .bottom-bg-text {
-    font-size: clamp(4rem, 20vw, 10rem);
-    bottom: 10px;
+    font-size: clamp(5rem, 24vw, 12rem);
+    bottom: 20px;
   }
 }

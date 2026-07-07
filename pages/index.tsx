@@ -45,10 +45,10 @@ const Home: NextPage = () => {
           direction="horizontal"
           className="bottom-bg-text"
           gradient={[
-            { offset: 0, color: 'rgba(255, 255, 255, 0.025)' },
-            { offset: 0.74, color: 'rgba(255, 255, 255, 0.025)' },
-            { offset: 0.75, color: 'rgba(0, 229, 255, 0.08)' },
-            { offset: 1.0, color: 'rgba(0, 229, 255, 0.08)' }
+            { offset: 0, color: 'rgba(255, 255, 255, 0.05)' },
+            { offset: 0.74, color: 'rgba(255, 255, 255, 0.05)' },
+            { offset: 0.75, color: 'rgba(0, 229, 255, 0.16)' },
+            { offset: 1.0, color: 'rgba(0, 229, 255, 0.16)' }
           ]}
         >
           CRUX
