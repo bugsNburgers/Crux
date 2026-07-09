@@ -100,7 +100,7 @@ export default function Hero() {
               <span className={styles.titleLine2}>
                 <DecryptedText
                   text="STUDIOS"
-                  speed={30}
+                  speed={17}
                   maxIterations={22}
                   sequential={true}
                   characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*"

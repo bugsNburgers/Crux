@@ -23,12 +23,34 @@
   line-height: 1.1;
 }
 
+/* ── Categories ────────────────────────────────────────── */
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-bottom: 48px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.categoryTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
 /* ── Grid ───────────────────────────────────────────── */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  margin-bottom: 48px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 /* ── Card ───────────────────────────────────────────── */
@@ -156,6 +178,10 @@
 }
 
 /* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 640px) {
   .grid { grid-template-columns: 1fr; }
   .card { padding: 28px; }
