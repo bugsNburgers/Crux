@@ -1,0 +1,30 @@
+# Crux Studios
+
+> Crux Studios is a full-stack software development studio based in Bangalore, India. We architect high-performance distributed systems, build zero-bloat web applications, and engineer software that scales.
+
+## Overview
+- **Location:** Bangalore, India (Serves clients worldwide).
+- **Core Principles:** Zero-bloat engineering, minimal dependencies, right tool for the job, and direct developer communication (no middlemen).
+- **Primary Technologies:** React, Next.js, TypeScript, Node.js, Python, PostgreSQL, MongoDB, Docker, and WebSockets.
+
+## Services
+- **UI/UX Design:** User flows, wireframes, and high-fidelity screens designed to solve real user problems.
+- **Frontend Development:** Accessible, responsive React/Next.js applications built from scratch (no generic templates).
+- **Backend & Database Design:** Node.js APIs, distributed caching (Redis), and database architecture (PostgreSQL, MongoDB).
+- **Integrations:** Payment gateways (Stripe, Razorpay) and custom real-time messaging pipelines.
+
+## Projects Shipped
+- **HonorLog:** Achievement and grading tracking platform for martial arts academies (built with Next.js, Node.js, and PostgreSQL).
+- **EntryDesk:** Lean, custom visitor management check-in app (built with React, Express, and MongoDB).
+- **RingFlow:** Streamlined call flow and team communication pipeline management (built with React, WebSockets, and REST APIs).
+- **Drawer:** Open-source tournament brackets generator for Karate events (built with Python, pandas, ReportLab, and Docker).
+
+## Team
+- **Suprateek Yawagal:** Full-Stack Developer focusing on architecture, frontend, and product engineering.
+- **Ullas M:** Full-Stack Developer focusing on backend, systems, and infrastructure.
+
+## Contact
+- **Website:** [https://cruxstudios.dev](https://cruxstudios.dev)
+- **Primary Call to Action:** [Hire Us / Contact Section](https://cruxstudios.dev#contact)
+- **Suprateek Yawagal LinkedIn:** [LinkedIn](https://www.linkedin.com/in/suprateek-yawagal)
+- **Ullas M LinkedIn:** [LinkedIn](https://www.linkedin.com/in/ull0s-m/)

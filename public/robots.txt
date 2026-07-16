@@ -2,22 +2,6 @@
 User-agent: *
 Allow: /
 
-# GPTBot
-User-agent: GPTBot
-Disallow: /
-
-# Google-Extended
-User-agent: Google-Extended
-Disallow: /
-
-# CCBot
-User-agent: CCBot
-Disallow: /
-
-# anthropic-ai
-User-agent: anthropic-ai
-Disallow: /
-
 # Host
 Host: https://cruxstudios.dev
 

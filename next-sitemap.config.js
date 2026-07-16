@@ -4,12 +4,7 @@ module.exports = {
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
-      { userAgent: '*', allow: '/' },
-      // Block AI training bots — they add no SEO value
-      { userAgent: 'GPTBot', disallow: '/' },
-      { userAgent: 'Google-Extended', disallow: '/' },
-      { userAgent: 'CCBot', disallow: '/' },
-      { userAgent: 'anthropic-ai', disallow: '/' },
+      { userAgent: '*', allow: '/' }
     ],
     additionalSitemaps: [],
   },
