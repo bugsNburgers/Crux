@@ -27,6 +27,14 @@ const jsonLd = {
   sameAs: [],
 }
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Crux Studios',
+  alternateName: ['Crux', 'CruxStudios'],
+  url: 'https://cruxstudios.dev',
+}
+
 export default function Document() {
   return (
     <Html lang="en">
@@ -97,6 +105,12 @@ export default function Document() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd).replace(/</g, '\\u003c'),
           }}
         />
       </Head>
