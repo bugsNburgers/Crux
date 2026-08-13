@@ -34,7 +34,6 @@ const TEAM_CATEGORIES: TeamCategory[] = [
     title: 'Operations',
     members: [
       { id: 'aashitha', name: 'Aashitha', role: 'Live Systems Administrator', initials: 'A' },
-      { id: 'hemann', name: 'Hemann', role: 'Live Systems Administrator', initials: 'H' },
       { id: 'raghav', name: 'Raghav', role: 'Live Systems Administrator', initials: 'R' },
     ]
   },
